@@ -1,0 +1,4 @@
+check process unbound with pidfile /var/run/unbound/unbound.pid
+       start program = "/etc/init.d/unbound start"
+       stop program  = "/etc/init.d/unbound stop"
+       if failed host 127.0.0.1 port 53 use type udp protocol dns then restart
